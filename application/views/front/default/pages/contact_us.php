@@ -78,12 +78,12 @@
                                         <div class="help-block with-errors"></div>
                                     </div>
                                     <div class="col-12 form-group">
-                                        <div class="form-icon"><i class="far fa-envelope"></i></div>
+                                        <div class="form-icon"><i class="fa fa-envelope"></i></div>
                                         <input type="email" placeholder="E-mail Address" class="form-control" name="email" data-error="email field is required" >
                                         <div class="help-block with-errors"></div>
                                     </div>
                                     <div class="col-12 form-group">
-                                        <div class="form-icon"><i class="fas fa-phone-volume"></i></div>
+                                        <div class="form-icon"><i class="fas fa-phone"></i></div>
                                         <input type="text" placeholder="Phone*" class="form-control" name="phone" data-error="Phone field is required" required>
                                         <div class="help-block with-errors"></div>
                                     </div>
@@ -93,7 +93,7 @@
                                         <div class="help-block with-errors"></div>
                                     </div>
                                     <div class="col-12 form-group">
-                                        <div class="form-icon"><i class="far fa-comments"></i></div>
+                                        <div class="form-icon"><i class="fa fa-comments"></i></div>
                                         <textarea placeholder="Address" class="textarea form-control" name="message" id="form-message" rows="4" cols="20" 
                                         data-error="Message field is required" ></textarea>
                                         <div class="help-block with-errors"></div>

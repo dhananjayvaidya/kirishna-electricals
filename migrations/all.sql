@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Oct 11, 2020 at 11:57 AM
--- Server version: 10.3.23-MariaDB-cll-lve
--- PHP Version: 7.2.32
+-- Host: 127.0.0.1
+-- Generation Time: Oct 15, 2020 at 05:34 AM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.2.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `u705346860_krishna_electr`
+-- Database: `krishna_electricals_main`
 --
 
 -- --------------------------------------------------------
@@ -94,20 +94,20 @@ INSERT INTO `contact_us` (`id`, `full_name`, `email_id`, `phone_number`, `subjec
 -- --------------------------------------------------------
 
 --
--- Table structure for table `settings`
+-- Table structure for table `ke_settings`
 --
 
-CREATE TABLE `settings` (
+CREATE TABLE `ke_settings` (
   `id` int(11) NOT NULL,
   `set_name` varchar(255) NOT NULL,
   `set_value` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `settings`
+-- Dumping data for table `ke_settings`
 --
 
-INSERT INTO `settings` (`id`, `set_name`, `set_value`) VALUES
+INSERT INTO `ke_settings` (`id`, `set_name`, `set_value`) VALUES
 (1, 'COMPANY_NAME', 'Krishna Electricals'),
 (2, 'COMPANY_LOGO', 'uploads/logo/1601831061-logo.png'),
 (3, 'COMPANY_PRIMARY_PHONE_NUMBER', '7710998826'),
@@ -126,10 +126,10 @@ INSERT INTO `settings` (`id`, `set_name`, `set_value`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Table structure for table `ke_users`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE `ke_users` (
   `id` int(11) NOT NULL,
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
@@ -142,11 +142,32 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `users`
+-- Dumping data for table `ke_users`
 --
 
-INSERT INTO `users` (`id`, `first_name`, `last_name`, `email_id`, `password`, `role`, `account_status`, `timestamp`, `mod_timestamp`) VALUES
+INSERT INTO `ke_users` (`id`, `first_name`, `last_name`, `email_id`, `password`, `role`, `account_status`, `timestamp`, `mod_timestamp`) VALUES
 (1, 'Admin', 'Admin', 'admin@demo.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'SUADMIN', 1, 1596127264, 1596127264);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pages`
+--
+
+CREATE TABLE `pages` (
+  `id` int(11) NOT NULL,
+  `page_name` varchar(255) NOT NULL,
+  `page_content` longtext NOT NULL,
+  `status` int(11) NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `category_id` int(11) NOT NULL DEFAULT 0,
+  `parent_id` int(11) NOT NULL DEFAULT 0,
+  `timestamp` int(11) NOT NULL DEFAULT 0,
+  `mod_timestamp` int(11) NOT NULL DEFAULT 0,
+  `draft` int(11) NOT NULL DEFAULT 0,
+  `etms` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables
@@ -159,18 +180,24 @@ ALTER TABLE `contact_us`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `settings`
+-- Indexes for table `ke_settings`
 --
-ALTER TABLE `settings`
+ALTER TABLE `ke_settings`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `set_name` (`set_name`);
 
 --
--- Indexes for table `users`
+-- Indexes for table `ke_users`
 --
-ALTER TABLE `users`
+ALTER TABLE `ke_users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email_id` (`email_id`);
+
+--
+-- Indexes for table `pages`
+--
+ALTER TABLE `pages`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -183,16 +210,22 @@ ALTER TABLE `contact_us`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
--- AUTO_INCREMENT for table `settings`
+-- AUTO_INCREMENT for table `ke_settings`
 --
-ALTER TABLE `settings`
+ALTER TABLE `ke_settings`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT for table `ke_users`
 --
-ALTER TABLE `users`
+ALTER TABLE `ke_users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `pages`
+--
+ALTER TABLE `pages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
