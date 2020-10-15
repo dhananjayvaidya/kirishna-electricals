@@ -23,7 +23,7 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="contact-box-layout1">
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15069.342212963726!2d73.1085099!3d19.2242024!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x663e0d480f4f0171!2sOmkar%20Cool%20Services!5e0!3m2!1sen!2sin!4v1597413323927!5m2!1sen!2sin" frameborder="0" style="width:100%; height:400px;border:0;padding-bottom:30px;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        <?php /*?><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15069.342212963726!2d73.1085099!3d19.2242024!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x663e0d480f4f0171!2sOmkar%20Cool%20Services!5e0!3m2!1sen!2sin!4v1597413323927!5m2!1sen!2sin" frameborder="0" style="width:100%; height:400px;border:0;padding-bottom:30px;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe><?php */?>
                             <br>
                             <div class="contact-info">
                                 <div class="media media-none-lg media-none--sm col-md-6">
