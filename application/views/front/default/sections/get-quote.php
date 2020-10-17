@@ -15,7 +15,7 @@
                                     </li>
                                     <li>
                                         <h3>We Are Committed</h3>
-                                        <p>Omcar cool services have been dedicated to delivering the next level of satisfaction through seamless craftsmanship by the experts. </p>
+                                        <p>Krishna Electricals have been dedicated to delivering the next level of satisfaction through seamless craftsmanship by the experts. </p>
                                     </li>
                                     <li>
                                         <h3>Regular &amp; Monthly Service</h3>
