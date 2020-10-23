@@ -156,10 +156,19 @@
     <script src="<?php echo base_url();?>assets/js/jquery.datetimepicker.full.min.js"></script>
     <!-- Main js -->
     <script src="<?php echo base_url();?>assets/js/main.js"></script>
-   
-   <a class="whatsapp-icon-floating" href="https://api.whatsapp.com/send?phone=<?php echo $this->settings_model->get_phone_number();?>&amp;text=&amp;source=&amp;data="><img src="<?php echo base_url();?>assets/img/whatsapp.png"></a>
-   <a class="phone-icon-floating" href="tel:<?php echo $this->settings_model->get_phone_number();?>"><img src="<?php echo base_url();?>assets/img/phone-sm.png"></a> 
-    
+    <?php 
+    if ($footer_call_btn == true){
+    ?>
+        <a class="whatsapp-icon-floating" href="https://api.whatsapp.com/send?phone=<?php echo $this->settings_model->get_phone_number();?>&amp;text=&amp;source=&amp;data="><img src="<?php echo base_url();?>assets/img/whatsapp.png"></a>
+        <a class="phone-icon-floating" href="tel:<?php echo $this->settings_model->get_phone_number();?>"><img src="<?php echo base_url();?>assets/img/phone-sm.png"></a> 
+    <?php     
+    }else{
+        ?>     
+        <a class="whatsapp-icon-floating" href="https://api.whatsapp.com/send?phone=<?php echo $footer_phone_number;?>&amp;text=&amp;source=&amp;data="><img src="<?php echo base_url();?>assets/img/whatsapp.png"></a>
+        <a class="phone-icon-floating" href="tel:<?php echo $footer_phone_number;?>"><img src="<?php echo base_url();?>assets/img/phone-sm.png"></a> 
+        <?php 
+    }
+    ?>
 
 </body>
 

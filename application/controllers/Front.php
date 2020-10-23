@@ -11,22 +11,26 @@ class Front extends CI_Controller {
 	public function index()
 	{
 	    $page_data['page_title'] = "Home | ".$this->settings_model->get_company_name();
-	    $page_data['page'] = "index";
+        $page_data['page'] = "index";
+        $page_data['footer_call_btn'] = true;
 		$this->load->view("front/".$this->theme_name."/index",$page_data);
 	}
 	public function about_us(){
 	    $page_data['page_title'] = 'About Us | '.$this->settings_model->get_company_name();
-	    $page_data['page'] = 'about_us';
+        $page_data['page'] = 'about_us';
+        $page_data['footer_call_btn'] = true;
 	    $this->load->view("front/".$this->theme_name."/index",$page_data);
 	}
     public function services(){
         $page_data['page_title'] = 'Our Services | '.$this->settings_model->get_company_name();
-	    $page_data['page'] = 'all_services';
+        $page_data['page'] = 'all_services';
+        $page_data['footer_call_btn'] = true;
         $this->load->view("front/".$this->theme_name."/index",$page_data);
     }
     public function get_quote(){
         $page_data['page_title'] = 'Get Quote | '.$this->settings_model->get_company_name();
-	    $page_data['page'] = 'get_quote';
+        $page_data['page'] = 'get_quote';
+        $page_data['footer_call_btn'] = true;
         $this->load->view("front/".$this->theme_name."/index",$page_data);
     }
     public function single_service($param1){
@@ -43,6 +47,13 @@ class Front extends CI_Controller {
             $page_data['page_title'] = $clean_service_name.' | '.$this->settings_model->get_company_name();
     	    $page_data['page'] = 'services/'.str_replace('../','',$file_name);
         }
+        if ($file_name == 'ac-repair'){
+            $page_data['footer_phone_number'] = '9323342083';
+        }else{
+            $page_data['footer_phone_number'] = '7710998826';
+        }
+        
+        
         $this->load->view("front/".$this->theme_name."/index",$page_data);
     }
     
